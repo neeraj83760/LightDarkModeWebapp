@@ -18,6 +18,13 @@ Same colors are used in the data dark theme except the box shadow property
   --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
+/* We need to set the dark-theme attribute at the highest level of the html 
+   Document.documentElement article explains it well means how it can be 
+   acheivable : https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement
+
+   Definition : Document.documentElement returns the Element that is the root element of the document (for example, the <html> element for HTML documents).
+*/
+
 [data-theme="dark"] {
   --primary-color: rgb(150, 65, 255);
   --primary-variant: #6c63ff;
@@ -213,7 +220,11 @@ p {
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
+  /* We know that z index of our nav bar is 10 so we want to keep it above nav bar so 
+  its zindex is 100
+  */
   z-index: 100;
+  /* We want to see it on the same spot of the webpage so position should be fixed*/
   position: fixed;
   right: 25px;
   top: 30px;
@@ -264,6 +275,7 @@ p {
   width: 26px;
 }
 
+/* When toggle button is checked we are changing it;s primary color */
 input:checked + .slider {
   background: var(--primary-color);
 }
@@ -280,6 +292,7 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
+/* Fas : font awesome solid we are choosing the size of our Icon */
 .fas {
   font-size: 30px;
   margin-right: 5px;
