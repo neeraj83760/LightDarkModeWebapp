@@ -12,6 +12,22 @@ const Image3 = document.getElementById('image3')
 const textBox= document.getElementById('text-box')
 
 
+// Keyboard shorcut : to replace similar occurences of a word in vs code we select the word + ctrl + d
+// than make changes in one go 
+
+// Dark or light Images 
+
+function ImageMode(color){
+
+
+    Image1.src = `img/undraw_proud_coder_${color}.svg`;
+    Image2.src = `img/undraw_feeling_proud_${color}.svg`;
+    Image3.src = `img/undraw_conceptual_idea_${color}.svg`;
+    
+
+}
+
+
 // Dark Mode Styles
 
 function darkMode(){
@@ -21,15 +37,16 @@ function darkMode(){
     textBox.style.backgroundColor = 'rgb(255 255 255/ 50%)'  
     console.log(toggleIcon.children); // it will show the html collection elements which is in the form of array
     
-
+    // Instead of using two methods add and remove of the classlist we will call a single method called 
+    // replace , this will help in optimizing the two lines of codes in one line 
+  
     toggleIcon.children[0].textContent = 'Dark Mode'
-    toggleIcon.children[1].classList.remove('fa-sun') 
-    toggleIcon.children[1].classList.add('fa-moon')
+    toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') 
+    // toggleIcon.children[1].classList.add('fa-moon')
 
+    ImageMode('dark');
 
-    Image1.src = 'img/undraw_proud_coder_dark.svg'
-    Image2.src = 'img/undraw_feeling_proud_dark.svg'
-    Image3.src = 'img/undraw_conceptual_idea_dark.svg'
+    
 
 }
 
@@ -44,13 +61,15 @@ function lightMode(){
     
 
     toggleIcon.children[0].textContent = 'Light Mode'
-    toggleIcon.children[1].classList.remove('fa-moon') 
-    toggleIcon.children[1].classList.add('fa-sun')
 
 
-    Image1.src = 'img/undraw_proud_coder_light.svg'
-    Image2.src = 'img/undraw_feeling_proud_light.svg'
-    Image3.src = 'img/undraw_conceptual_idea_light.svg'
+    // toggleIcon.children[1].classList.remove('fa-moon') 
+    // toggleIcon.children[1].classList.add('fa-sun')
+    
+    toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun')
+    
+    ImageMode('light');
+
 
 }
 
