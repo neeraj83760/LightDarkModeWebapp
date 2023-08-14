@@ -27,54 +27,17 @@ function ImageMode(color){
 
 }
 
-
-// Dark Mode Styles
-
-function darkMode(){
+function toggleDarkLightMode(isDark){
 
 
-    nav.style.backgroundColor = 'rgb(0 0 0/ 50%)';
-    textBox.style.backgroundColor = 'rgb(255 255 255/ 50%)'  
-    console.log(toggleIcon.children); // it will show the html collection elements which is in the form of array
+    nav.style.backgroundColor = isDark ? 'rgb(0 0 0/ 50%)' : 'rgb(255 255 255/ 50%)';
+    textBox.style.backgroundColor = isDark ? 'rgb(255 255 255/ 50%)'  : 'rgb(0 0 0/ 50%)';
     
-    // Instead of using two methods add and remove of the classlist we will call a single method called 
-    // replace , this will help in optimizing the two lines of codes in one line 
-  
-    toggleIcon.children[0].textContent = 'Dark Mode'
-    toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') 
-    // toggleIcon.children[1].classList.add('fa-moon')
-
-    ImageMode('dark');
-
-    
+    toggleIcon.children[0].textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    isDark? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon'): toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun')
+    isDark? ImageMode('dark') : ImageMode('light');
 
 }
-
-// Light Mode Styles
-
-function lightMode(){
-
-
-    nav.style.backgroundColor = 'rgb(255 255 255/ 50%)';
-    textBox.style.backgroundColor = 'rgb(0 0 0/ 50%)'  
-    console.log(toggleIcon.children); // it will show the html collection elements which is in the form of array
-    
-
-    toggleIcon.children[0].textContent = 'Light Mode'
-
-
-    // toggleIcon.children[1].classList.remove('fa-moon') 
-    // toggleIcon.children[1].classList.add('fa-sun')
-    
-    toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun')
-    
-    ImageMode('light');
-
-
-}
-
-
-
 
 // Switch theme Dynamically 
 
@@ -98,12 +61,12 @@ function switchTheme(event){
 
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        darkMode();
+        toggleDarkLightMode(true);
     }else
     {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
-        lightMode();
+        toggleDarkLightMode(false);
 
     }
 
