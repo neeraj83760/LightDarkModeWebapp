@@ -302,18 +302,12 @@ input:checked + .slider::before {
 /*  Media Queries to make the page responsive  */
 @media screen and (max-width: 600px) {
 
-  section{
-
-  align-items: center;
-  justify-content: center;
-
-  }
-
   .about-container{
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* align-content: space-around; */
+    padding-left: 1rem;
     
 
     }
