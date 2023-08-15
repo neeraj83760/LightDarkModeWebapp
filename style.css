@@ -302,12 +302,18 @@ input:checked + .slider::before {
 /*  Media Queries to make the page responsive  */
 @media screen and (max-width: 600px) {
 
+  section{
+
+
+
+  }
+
   .about-container{
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
+    
 
     }
 
@@ -316,16 +322,24 @@ input:checked + .slider::before {
     margin-bottom: 1rem;
   }  
 
-  h1,h2{
+  h1{
 
     text-align: center;
+    font-size: 70px;
+  }
+
+  h2{
+
+    text-align: center;
+    font-size: 25px;
+    font-weight: normal;
   }
 
  .parent-toggle-nav{
 
   display: grid;
   /* Below line of code matlab : 1 row of 100px and one fraction of one column */
-  grid-template: repeat(1, 4rem) / 1fr ;
+  grid-template: repeat(1, 4.5rem) / 1fr ;
   
 }
    
