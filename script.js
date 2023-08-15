@@ -11,7 +11,6 @@ const Image2 = document.getElementById('image2')
 const Image3 = document.getElementById('image3')
 const textBox= document.getElementById('text-box')
 
-
 // Keyboard shorcut : to replace similar occurences of a word in vs code we select the word + ctrl + d
 // than make changes in one go 
 
@@ -60,7 +59,7 @@ function switchTheme(event){
     if(event.target.checked){
 
         document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('theme', 'dark')
         toggleDarkLightMode(true);
     }else
     {
@@ -88,7 +87,7 @@ if(currentTheme){
     if(currentTheme === 'dark'){
 
         toggleSwitch.checked = true;
-        darkMode();
+        toggleDarkLightMode(true);
     }
 
 }
