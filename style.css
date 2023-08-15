@@ -306,10 +306,8 @@ input:checked + .slider::before {
 
     display: flex;
     flex-direction: column;
-    /* align-content: space-around; */
-    padding-left: 1rem;
-    
-
+    padding-left: 40px;
+  
     }
 
   .image-container{
