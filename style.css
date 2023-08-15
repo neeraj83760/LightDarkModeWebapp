@@ -297,3 +297,63 @@ input:checked + .slider::before {
   font-size: 30px;
   margin-right: 5px;
 }
+
+
+/*  Media Queries to make the page responsive  */
+@media screen and (max-width: 600px) {
+
+  .about-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+
+    }
+
+  .image-container{
+
+    margin-bottom: 1rem;
+  }  
+
+  h1,h2{
+
+    text-align: center;
+  }
+
+ .parent-toggle-nav{
+
+  display: grid;
+  /* Below line of code matlab : 1 row of 100px and one fraction of one column */
+  grid-template: repeat(1, 4rem) / 1fr ;
+  
+}
+   
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    
+}
+
+button{
+
+  margin: 10px;
+}
+
+.social-icons{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 50px;
+
+}
+
+.fab{
+
+  font-size: 60px;
+  margin: 20px;
+}
+
+ }

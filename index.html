@@ -9,28 +9,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Dark Mode Switch  -->
 
-    <div class="theme-switch-wrapper">
-        <span id="toggle-icon">
-            <span class="toggle-text">Light Mode</span>
-            <!--fas means font awesome solid -->
-            <i class="fas fa-sun"></i>
-            <label class="theme-switch">
-                <!-- checkbox coz we need this work as on and off -->
-                <input type="checkbox">
-                <div class="slider round"></div>
-            </label>
-        </span>
+    <div class="parent-toggle-nav">
+        <div class="toggle-container">
+            <div class="theme-switch-wrapper">
+                <span id="toggle-icon">
+                    <span class="toggle-text">Light Mode</span>
+                    <!--fas means font awesome solid -->
+                    <i class="fas fa-sun"></i>
+                    <label class="theme-switch">
+                        <!-- checkbox coz we need this work as on and off -->
+                        <input type="checkbox">
+                        <div class="slider round"></div>
+                    </label>
+                </span>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="nav-container">
+            <nav id="nav">
+                <a href="#home" >Home</a>
+                <a href="#about" >About</a>
+                <a href="#projects" >Projects</a>
+                <a href="#contact" >Contact</a>
+            </nav>
+        </div>
     </div>
 
-    <!-- Navigation -->
-    <nav id="nav">
-        <a href="#home" >Home</a>
-        <a href="#about" >About</a>
-        <a href="#projects" >Projects</a>
-        <a href="#contact" >Contact</a>
-    </nav>
     <!-- Home Section -->
     <section id="home">
     <div class="title-group">
@@ -57,6 +65,9 @@
             </div>
         </div>
     </section>
+
+
+    
     <!-- Project Section -->
     <section id="projects">
         <h1>Buttons</h1>
